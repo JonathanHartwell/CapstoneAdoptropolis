@@ -1,0 +1,50 @@
+
+
+.petdetailsbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+}
+
+.detailstory {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    gap: 50px;
+    height: 400px;
+    font-size: larger;
+    text-align: center;
+}
+
+.detailsPetImg {
+    height: 450px;
+    margin-right: 50px;
+}
+
+.detailPetAdopt {
+    color: #275DAD;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    width: 125px;
+    display: flex;
+    justify-content: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 25;
+    width: 400px;
+}
+
+h3 {
+    font-size: x-large;
+}
+
+.detailPetAdopt:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

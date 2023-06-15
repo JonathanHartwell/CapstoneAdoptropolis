@@ -1,0 +1,298 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* PetCard */
+
+:root {
+	--surface-color: #275DAD;
+	--curve:40
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Noto Sans JP', sans-serif;
+  background-attachment: fixed;
+	background-image: linear-gradient(to bottom right, #FCF7F8, #ABA9C3);
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.pet-card-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+	margin: 4rem 5vw;
+	padding-left: 200px;
+	padding-right: 200px;
+	list-style-type: none;
+}
+
+.pet-card {
+	position: relative;
+	display: block;
+	height: 100%;
+  max-width: 375px;
+	border-radius: calc(var(--curve) * 1px);
+	overflow: hidden;
+	text-decoration: none;
+}
+
+.pet-picture {
+	width: 100%;
+	height: 400px;
+	object-fit: cover;
+  margin-bottom: 50px;
+}
+
+.card-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	border-radius: calc(var(--curve) * 1px);
+	background-color: var(--surface-color);
+	transform: translateY(99%);
+	transition: .4s ease-in-out;
+}
+
+.pet-card:hover .card_overlay {
+transform: translateY();
+}
+
+.card-header {
+	position: relative;
+  height: 50%;
+	display: flex;
+	align-items: center;
+  justify-content: center;
+	flex-direction: column;
+	gap: 3em;
+	padding: 2em;
+	border-radius: calc(var(--curve) * 1px) 0 0 0;
+	background-color: var(--surface-color);
+	transform: translateY(-50%);
+	transition: .4s ease-in-out;
+}
+
+.card-header:hover {
+	transform: translateY(-100%);
+}
+
+.card-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-arc {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	bottom: 99.5%;
+	right: 0;      
+	z-index: 1;
+  }
+
+.card-btmdetail {
+  display: flex;
+  justify-content: cenet;
+}
+
+.card-arc path {
+	fill: var(--surface-color);
+	d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+  } 
+
+
+.card-title {
+	font-size: 1em;
+	margin: 0 0 .3em;
+	color: white;
+	font-size: x-large;
+}
+
+.card-age {
+	color: white;
+  text-align: center;
+}
+
+.btn-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fav-btn-wrapper {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  transition: .5s;
+}
+
+.fav-btn-wrapper:hover {
+	cursor: pointer;
+	scale: 110%;
+	transition: ease-in-out .5s;
+}
+
+.favorite-btn {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-decoration: none;
+  overflow: hidden;
+  z-index: 4;
+}
+
+.like-overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #ff4f8f;
+  transform: scale(0);
+  transition: all 0.4s;
+  z-index: 0;
+}
+
+.i.not-liked {
+  display: block;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  font-size: 40px;
+}
+
+.i.is-liked {
+  display: none;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.fav-btn-wrapper.is-active .like-overlay {
+  transform: scale(1);
+}
+
+@-webkit-keyframes bouncy {
+  from, to {
+    -webkit-transform: scale(1, 1);
+  }
+  25% {
+    -webkit-transform: scale(0.7, 1.3);
+  }
+  50% {
+    -webkit-transform: scale(1.2, 0.8);
+  }
+  75% {
+    -webkit-transform: scale(0.9, 1.1);
+  }
+}
+
+@keyframes bouncy {
+  from, to {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.7, 1.3);
+  }
+  50% {
+    transform: scale(1.2, 0.8);
+  }
+  75% {
+    transform: scale(0.9, 1.1);
+  }
+}
+
+.bouncy {
+  -webkit-animation: bouncy 0.6s;
+  animation: bouncy 0.6s;
+  -webkit-animation-duration: 0.6s;
+  animation-duration: 0.6s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.inputSpan {
+  position: relative;
+  background: linear-gradient( 25deg, #276DAD, #aca9c4);
+  padding: 3px;
+  display: inline-block;
+  border-radius: 9999em;
+
+}
+
+.inputText {
+  position: relative;
+  display: inherit;
+  border-radius: inherit;
+  margin: 0;
+  border: none;
+  outline: none;
+  padding: 0 .325em;
+  z-index: 1;
+  text-align: center;
+}

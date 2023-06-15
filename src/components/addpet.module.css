@@ -1,0 +1,179 @@
+.formBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    width: 100vw;
+}
+
+.addPetForm {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+padding: 50px;
+background-color: #ced3dc;
+width: 950px;
+height: 600px;
+border-radius: calc(var(--curve) * 1px);
+box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.formInputSection {
+display: flex;
+justify-content: center;
+flex-direction: row;
+gap: 100px;
+}
+
+.petInput1{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.addPetForm1 {
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+gap: 10px;
+width: 275px
+}
+
+.addPetForm2 {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+width: 275px;
+}
+
+.formBtn {
+margin-top: 50px;
+color: #fff;
+padding: 15px 25px;
+border-radius: 100px;
+background-color: #4C43CD;
+background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 87% at 26% 20%, rgba(255, 255, 255, 0.41) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+box-shadow: 2px 19px 31px rgba(0, 0, 0, 0.2);
+font-weight: bold;
+font-size: 16px;
+border: 0;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+width: 150px;
+cursor: pointer;
+}
+
+.bioLabel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.select1 {
+    display: flex;
+    justify-content: space-around;
+    width: 275px;
+}
+
+.select2 {
+    display: flex;
+    justify-content: space-around;
+    width: 275px;
+    
+}
+
+.selectBox {
+    position: relative;
+    background: linear-gradient( 25deg, #276DAD, #aca9c4);
+    padding: 3px;
+    display: inline-block;
+    border-radius: 9999em;
+  }
+  
+  .select {
+    position: relative;
+    display: inherit;
+    border-radius: inherit;
+    margin: 0;
+    border: none;
+    outline: none;
+    padding: 0 .325em;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .selectOption{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+
+
+  .checkContainer {
+    --input-focus: #2d8cf0;
+    --input-out-of-focus: #ccc;
+    --bg-color: #fff;
+    --bg-color-alt: #666;
+    --main-color: #323232;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .checkContainer input {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  .checkmark {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 0;
+    left: 0;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    box-shadow: 4px 4px var(--main-color);
+    background-color: var(--input-out-of-focus);
+    transition: all 0.3s;
+  }
+  
+  .checkContainer input:checked ~ .checkmark {
+    background-color: var(--input-focus);
+  }
+  
+  .checkmark:after {
+    content: "";
+    width: 7px;
+    height: 15px;
+    position: absolute;
+    top: 2px;
+    left: 8px;
+    display: none;
+    border: solid var(--bg-color);
+    border-width: 0 2.5px 2.5px 0;
+    transform: rotate(45deg);
+  }
+  
+  .checkContainer input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .optionbox{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: start;
+    width: 200px;
+    gap: 20px;
+  }
+  
